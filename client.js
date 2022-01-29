@@ -1,4 +1,4 @@
-const socket = io("http://localhost:5006");
+const socket = io("https://chat-by-vk.herokuapp.com");
 
 const drop = document.querySelector(".frm"); //form tag
 const dropMessage = document.querySelector(".message"); //input tag
