@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
 // const io = require('socket.io')(5006, { cors: { origin: '*', } });
-const io = require("socket.io")(https);
+const io = require("socket.io")(http);
 
 const users = {}; // define for getting name of diff users with socket id
 var port = process.env.PORT || 3000;
