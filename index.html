@@ -198,6 +198,7 @@
 
   <script>
     const socket = io();
+    // const cd = require("./models.js");
 
     const drop = document.querySelector(".frm"); //form tag
     const dropMessage = document.querySelector(".message"); //input tag
@@ -233,6 +234,15 @@
 
     const name = prompt("Enter your name to get in:", "Unknown");
     socket.emit("new-user-joined", name);
+
+    socket.on("output-messages", (data) => {
+      console.log(data);
+      if (data.length) {
+        data.forEach((message) => {
+          appendone(message.name, message.msg);
+        });
+      }
+    });
 
     socket.on("user-joined", (name) => {
       appendone("Server", `${name} joined the party!`);
